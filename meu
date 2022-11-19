@@ -1,0 +1,48 @@
+public class RoboDoGustavo extends AdvancedRobot {
+
+	
+	public void corr() {
+		setColors(Cor.preto, Cor.preto, Cor.preto);
+		
+		
+		while (true) {
+			
+			ahead(100);
+			turnLeft(50);
+			
+		}
+
+	}
+	public void onScannedRobot(ScannedRobotEvent e) {
+		
+		fire(2);
+		
+	}
+	
+	public void umAtaqWall(AtaqWallEvent event) {
+		
+		turnLeft(90);
+	}
+	
+	@Override
+	public void AtaqByBullet(AtaqByBulletEvent event) {
+		// TODO Auto-generated method stub
+		super.onHitByBullet(event);
+		
+		ahead(300);
+	}
+	
+	@Override
+	public void AtaqByBullet((AtaqByBulletEvent event) {
+		
+		super.onHitRobot(event);
+		
+		
+		for (int i = 0; i < 6; i++)
+			fogo(3);
+		
+		turnLeft(90);
+	}
+
+
+}
